@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AlugaCar — Aluguel de Carros</title>
+
+  <!-- Arquivo CSS externo -->
+  <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">AC</div>
+      <div>
+        <div style="font-weight:800">AlugaCar</div>
+        <div style="font-size:12px;color:var(--muted)">Aluguel fácil — carros populares</div>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#home" onclick="navigate('#home')">Catálogo</a>
+      <a href="#" id="progressLink">Progresso do aluguel</a>
+    </nav>
+  </header>
+
+  <main class="container" id="app">
+    <!-- As páginas mudam dinamicamente aqui -->
+  </main>
+
+  <footer>
+    <small class="small-muted">Eficiência e praticidade para todos da região de Maracanaú</small>
+  </footer>
+
+  <!-- Templates das páginas -->
+  <template id="home-tpl">
+    <section>
+      <h1 style="color:white">Catálogo de carros</h1>
+      <p class="small-muted">Escolha entre modelos populares no Brasil.</p>
+      <div class="grid" id="catalog"></div>
+    </section>
+  </template>
+
+  <template id="detail-tpl">
+    <section>
+      <a href="#home" onclick="navigate('#home')" class="small-muted" style="text-decoration:none">← Voltar ao catálogo</a>
+      <div class="detail" style="margin-top:12px">
+        <div class="left">
+          <div class="gallery">
+            <img id="mainPhoto" class="main-photo" src="" alt="foto principal">
+            <div class="thumbs" id="thumbs"></div>
+            <div style="margin-top:10px;color:var(--muted)" id="carComment"></div>
+          </div>
+        </div>
+        <div class="right">
+          <h3 id="carTitle"></h3>
+          <div style="margin:8px 0" class="car-price" id="carPrice"></div>
+          <div style="margin:8px 0;color:var(--muted)" id="carSpecs"></div>
+          <div style="margin-top:20px">
+            <button id="rentNow" class="cta btn-primary">Alugar</button>
+          </div>
+          <div style="margin-top:16px;color:var(--muted)">Contato do anunciante:</div>
+          <div style="font-weight:800;margin-top:6px" id="carContact"></div>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <template id="progress-tpl">
+    <section>
+      <h1 style="color:white">Progresso do aluguel</h1>
+      <p class="small-muted">Seus alugueis recentes e status.</p>
+      <div id="progressList" style="display:flex;flex-direction:column;gap:12px;margin-top:12px"></div>
+    </section>
+  </template>
+
+  <!-- JavaScript externo -->
+  <script src="js/script.js"></script>
+</body>
+</html>
